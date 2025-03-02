@@ -19,7 +19,22 @@ jobs:
         with:
           node-version: '22'
           cache: 'npm'
+
+      - name: Install Netlify
+        run: npm install netlify-cli@17 -g
       
       - name: Install dependencies
         run: npm ci
+
+      - name: Build frontend
+        run: npm run build:client
+
+      - name: Deploy to Netlify
+        id: netlify_deploy
+        run: |
+          netlify deploy \
+            --dir dist \
+            --site ${{ secrets.NETLIFY_SITE_ID }} \
+            --auth ${{ secrets.NETLIFY_API_TOKEN }}
+            --prod
       
