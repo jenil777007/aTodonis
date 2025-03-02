@@ -29,7 +29,8 @@ jobs:
         uses: cloudflare/pages-action@v1
         with:
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          # apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          apiToken: 'M_WGwVqbJGCC3XtWxN6zpav4NLOKl9uakioQ1Lys'
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           branch: main
           projectName: aTodonist
