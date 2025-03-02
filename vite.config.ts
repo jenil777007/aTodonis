@@ -4,14 +4,14 @@ import path from 'path'
 
 export default defineConfig({
   plugins: [react()],
-  build: {
-    outDir: 'public/assets',
-    emptyOutDir: true,
-    manifest: true,
-  },
+  // build: {
+  //   outDir: 'public/assets',
+  //   emptyOutDir: true,
+  //   manifest: true,
+  // },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './resources/js')
-    }
-  }
+      '@': path.resolve(__dirname, './resources/js'),
+    },
+  },
 })
